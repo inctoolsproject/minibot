@@ -1,0 +1,7 @@
+akad
+requests
+rsa
+justgood
+gtts
+bs4
+pytz
