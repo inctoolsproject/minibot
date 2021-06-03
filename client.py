@@ -203,55 +203,55 @@ def Oup(op):
                       rname = setting["rname"].lower() + " "
                       link = txt[txt.find(":")+2:]
                       search = txt[txt.find(":")+2:].lower()
-                      if cmd== ".help" or cmd== rname + "help":
+                      if cmd== "help" or cmd== rname + "help":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           menu = "       Media             Stealing\n       Utility              Listing\n       Settings         Protection\n       Groupset       Customing\n       ───────────\n       Use 「 • 」for prefix."
                           client.help(msg.to,label,menu)
 
-                      if cmd== ".media" or cmd== rname + "media":
+                      if cmd== "media" or cmd== rname + "media":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           menu = open('help/media.txt','r').read()
                           client.help(msg.to,label,menu)
 
-                      if cmd== ".utility" or cmd== rname + "utility":
+                      if cmd== "utility" or cmd== rname + "utility":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           menu = open('help/utility.txt','r').read()
                           client.center(msg.to,label,menu)
 
-                      if cmd== ".listing" or cmd== rname + "listing":
+                      if cmd== "listing" or cmd== rname + "listing":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           menu = open('help/listing.txt','r').read()
                           client.center(msg.to,label,menu)
 
-                      if cmd== ".stealing" or cmd== rname + "stealing":
+                      if cmd== "stealing" or cmd== rname + "stealing":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           menu = open('help/stealing.txt','r').read()
                           client.help(msg.to,label,menu)
 
-                      if cmd== ".groupset" or cmd== rname + "groupset":
+                      if cmd== "groupset" or cmd== rname + "groupset":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           menu = open('help/groupset.txt','r').read()
                           client.help(msg.to,label,menu)
 
-                      if cmd== ".protection" or cmd== rname + "protection":
+                      if cmd== "protection" or cmd== rname + "protection":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           menu = open('help/protect.txt','r').read()
                           client.help(msg.to,label,menu)
 
-                      if cmd== ".customing" or cmd== rname + ".customing":
+                      if cmd== "customing" or cmd== rname + ".customing":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           menu = open('help/customing.txt','r').read()
                           client.help(msg.to,label,menu)
 
-                      if cmd== ".settings" or cmd== rname + ".settings":
+                      if cmd== "settings" or cmd== rname + ".settings":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           justgood = "https://imagizer.imageshack.com/img923/8396/vCgPT5.png"
@@ -274,7 +274,7 @@ def Oup(op):
 
                       '''  ** UTILITY **  ''' 
 
-                      if cmd== ".me" or cmd== rname + "me":
+                      if cmd== "me" or cmd== rname + "me":
                           client.me(msg.to)
 
                       if cmd in [".speed","sp","speed",".sp"] or cmd== rname + "speed":                      
@@ -286,7 +286,7 @@ def Oup(op):
                       if cmd in ["rname",".rname","mykey",".mykey"] or cmd== rname + "rname":
                           client.sendMessage(msg.to,setting["rname"].title())
 
-                      if cmd== ".kickall" or cmd== rname + "kickall" or cmd == setting["keykick"].lower():
+                      if cmd== "kickall" or cmd== rname + "kickall" or cmd == setting["keykick"].lower():
                          if msg.toType == 2:
                             hoax = client.getGroup(msg.to)
                             client.sendMessage(msg.to,"Goodbye Bitch ~")
@@ -295,9 +295,9 @@ def Oup(op):
                                   client.kickoutFromGroup(msg.to,[ax.mid])
                             client.sendMessage(msg.to,"Rubish has been cleared")
 
-                      if cmd== ".unsend" or cmd== rname + ".unsend":       
+                      if cmd== "unsend" or cmd== rname + ".unsend":       
                          client.sendMessage(msg.to,"「   Usage 」\n.unsend num")
-                      if cmd.startswith(".unsend ") or cmd.startswith(rname + "unsend "):
+                      if cmd.startswith("unsend ") or cmd.startswith(rname + "unsend "):
                          msgid = cmd.split("unsend ")[1]                        
                          if msgid.isdigit():
                             mess = client.getRecentMessagesV2(msg.to,999)                     
@@ -311,22 +311,22 @@ def Oup(op):
                                 except:pass
                          else:client.sendMessage(msg.to,"「   Usage 」\n.unsend num")
 
-                      if cmd== ".runtime" or cmd== rname + "runtime":
+                      if cmd== "runtime" or cmd== rname + "runtime":
                          high = time.time() - starting
                          voltage =  "Selfbot has been running for:\n"+runtime(high)
                          client.sendMessage(msg.to,f"{voltage}")
 
-                      if cmd== ".reboot":
+                      if cmd== "reboot":
                           client.sendMessage(msg.to,"restarting..")
                           restart()
 
-                      if cmd== ".allowliff":
+                      if cmd== "allowliff":
                          try:
                             liff()
                             client.sendFlexText(msg.to,"Flex enabled.")
                          except:client.sendReplyMessage(ids,to,"Click and allow url to enable flex\nline://app/1602876096-e9QWgjyo")
 
-                      if cmd== ".tagall":
+                      if cmd== "tagall":
                          group = client.getGroup(msg.to)
                          midMembers = [contact.mid for contact in group.members]
                          midSelect = len(midMembers)//20
@@ -342,7 +342,7 @@ def Oup(op):
 
                       '''  ** LISTING **  ''' 
 
-                      if cmd== ".ginfo" or cmd== rname + "ginfo":
+                      if cmd== "ginfo" or cmd== rname + "ginfo":
                           group = client.getGroup(msg.to)
                           try:gCreator = group.creator.displayName
                           except:gCreator = "Not Found"
@@ -363,10 +363,10 @@ def Oup(op):
                               try:client.sendMessage(msg.to,gqropen)
                               except:pass
 
-                      if cmd== ".gbirth" or cmd== rname + "gbirth":
+                      if cmd== "gbirth" or cmd== rname + "gbirth":
                           client.gbirth(msg.id,msg.to)
 
-                      if cmd== ".groups" or cmd== rname + "groups":
+                      if cmd== "groups" or cmd== rname + "groups":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           gruplist = client.getGroupIdsJoined()
@@ -378,10 +378,10 @@ def Oup(op):
                           menu +="\n\nTotal : %i Groups." % len(kontak)
                           client.help(msg.to,label,menu)
 
-                      if cmd== ".groupid" or cmd== rname + "groupid":
+                      if cmd== "groupid" or cmd== rname + "groupid":
                           client.sendMessage(msg.to,"{}".format(client.getGroup(msg.to).id))
 
-                      if cmd== ".friendlist" or cmd== rname + "friendlist":
+                      if cmd== "friendlist" or cmd== rname + "friendlist":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           contactlist = client.getAllContactIds()
@@ -393,7 +393,7 @@ def Oup(op):
                           menu +="\n\nTotal: %i Friends" % len(contacts)
                           client.help(msg.to,label,menu)
 
-                      if cmd== ".pendinglist" or cmd== rname + "pendinglist":
+                      if cmd== "pendinglist" or cmd== rname + "pendinglist":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           pending = client.getGroup(msg.to)
@@ -407,7 +407,7 @@ def Oup(op):
                              menu +="\n\nTotal: %i pendings." % len(pendinglist)
                              client.help(msg.to,label,menu)
 
-                      if cmd== ".memberlist" or cmd== rname + "pendinglist":
+                      if cmd== "memberlist" or cmd== rname + "pendinglist":
                           if cmd.startswith('.'):label = cmd.replace('.','')
                           else:label = cmd.replace(rname,"")
                           member = client.getGroup(msg.to)
@@ -419,7 +419,7 @@ def Oup(op):
                           menu +="\n\nTotal: %i members." % len(members)
                           client.help(msg.to,label,menu)
 
-                      if cmd.startswith(".clear") or cmd.startswith(rname + "clear"):
+                      if cmd.startswith("clear") or cmd.startswith(rname + "clear"):
                           clearing = cmd.split("clear")[1] 
                           if clearing == "blacklist":
                               if setting["blacklist"] == []:
@@ -438,7 +438,7 @@ def Oup(op):
                                       json.dump(setting, fp, sort_keys=True, indent=4)
                                   client.sendReplyMessage(msg.id,msg.to,"Whitelist cleared.")
 
-                      if cmd== ".whitelist" or cmd== rname + "whitelist":
+                      if cmd== "whitelist" or cmd== rname + "whitelist":
                           listing = setting["whitelist"]
                           no = 1; data = "• Imjustgood\n• Whitelist:\n\n"
                           for x in listing:
@@ -448,7 +448,7 @@ def Oup(op):
                           if listing == []:client.sendMessage(msg.to,"Whitelist empty!")
                           else:client.sendReplyMention(msg.id,msg.to,data,"",listing)
 
-                      if cmd== ".blacklist" or cmd== rname + "blackist":
+                      if cmd== "blacklist" or cmd== rname + "blackist":
                           listing = setting["blacklist"]
                           no = 1; data = "• Imjustgood\n• Blacklist:\n\n"
                           for x in listing:
@@ -458,7 +458,7 @@ def Oup(op):
                           if listing == []:client.sendMessage(msg.to,"Blacklist empty!")
                           else:client.sendReplyMention(msg.id,msg.to,data,"",listing)
 
-                      if cmd== ".findblacklist" or cmd== rname + "findblacklist":
+                      if cmd== "findblacklist" or cmd== rname + "findblacklist":
                          if setting["blacklist"] == []:client.sendReplyMessage(msg.id, msg.to,"Blacklist empty!")
                          else:
                             find = client.getGroup(msg.to)
@@ -482,7 +482,7 @@ def Oup(op):
 
                       '''    **   GROUPSET   **   ''' 
 
-                      if cmd.startswith(".kick ") or cmd.startswith(rname + "kick "):
+                      if cmd.startswith("kick ") or cmd.startswith(rname + "kick "):
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
                               mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -497,7 +497,7 @@ def Oup(op):
                                   try:client.kickoutFromGroup(msg.to, [mmq])
                                   except:client.sendMessage(msg.to, "Gagal son.")
 
-                      if cmd.startswith(".invite ") or cmd.startswith(rname + "invite "):
+                      if cmd.startswith("invite ") or cmd.startswith(rname + "invite "):
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
                               mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -514,7 +514,7 @@ def Oup(op):
                                       client.inviteIntoGroup(msg.to, [mmq])
                                   except:client.sendMessage(msg.to, "Gagal son.")
 
-                      if cmd.startswith(".sleed ") or cmd.startswith(rname + "sleed "):
+                      if cmd.startswith("sleed ") or cmd.startswith(rname + "sleed "):
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
                               mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -528,8 +528,8 @@ def Oup(op):
                                   except:
                                      client.sendMessage(msg.to, "Gagal son.")
 
-                      if cmd.startswith(".joinurl ") or cmd.startswith(rname + "joinurl "): 
-                          mmq = msg.text.split(".joinurl ")[1] 
+                      if cmd.startswith("joinurl ") or cmd.startswith(rname + "joinurl "): 
+                          mmq = msg.text.split("joinurl ")[1] 
                           if mmq.startswith("http"):
                              asw = mmq.split("/ti/g/")[1]
                              mmk = client.findGroupByTicket(asw)
@@ -552,7 +552,7 @@ def Oup(op):
                               except:pass
 
 
-                      if cmd.startswith(".sider ") or cmd.startswith(rname + "sider "):
+                      if cmd.startswith("sider ") or cmd.startswith(rname + "sider "):
                           data = cmd.split("sider ")[1]
                           if data == "on":
                               if msg.to in read["cctv"]:
@@ -568,7 +568,7 @@ def Oup(op):
                               else:client.sendMessage(msg.to,"already disabled.") 
 
 
-                      if cmd.startswith(".read") or cmd.startswith(rname + "read"):
+                      if cmd.startswith("read") or cmd.startswith(rname + "read"):
                           data = cmd.split("read")[1]
                           if data == " on": 
                               timezone = pytz.timezone("Asia/Jakarta")
@@ -612,7 +612,7 @@ def Oup(op):
                                    try:client.sendReplyMessage(msg.id, msg.to, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(ren).replace(' ','')+'}')}, contentType=0)
                                    except Exception as e:print(e)
 
-                      if cmd.startswith(".join ") or cmd.startswith(rname + "join "):
+                      if cmd.startswith("join ") or cmd.startswith(rname + "join "):
                           data = cmd.split("join ")[1]
                           if data == "on":
                               if setting["join"]:client.sendMessage(msg.to,"already enabled.")
@@ -630,7 +630,7 @@ def Oup(op):
                                 client.sendMessage(msg.to,"already disabled.") 
 
 
-                      if cmd.startswith(".ticket ") or cmd.startswith(rname + "ticket "):
+                      if cmd.startswith("ticket ") or cmd.startswith(rname + "ticket "):
                           data = cmd.split("ticket ")[1]
                           if data == "on":
                               if setting["ticket"]:client.sendMessage(msg.to,"already enabled.")
@@ -648,7 +648,7 @@ def Oup(op):
                                 client.sendMessage(msg.to,"already disabled.")
 
 
-                      if cmd.startswith(".addmsg ") or cmd.startswith(rname + "addmsg "):
+                      if cmd.startswith("addmsg ") or cmd.startswith(rname + "addmsg "):
                           data = cmd.split("addmsg ")[1]
                           if data == "on":
                               if setting["adders"]:client.sendMessage(msg.to,"already enabled.")
@@ -666,7 +666,7 @@ def Oup(op):
                                 client.sendMessage(msg.to,"add message disabled.")
 
 
-                      if cmd.startswith(".leave ") or cmd.startswith(rname + "leave "):
+                      if cmd.startswith("leave ") or cmd.startswith(rname + "leave "):
                           data = cmd.split("leave ")[1]
                           if data == "on":
                               if setting["leave"]:client.sendMessage(msg.to,"already enabled.")
@@ -683,7 +683,7 @@ def Oup(op):
                                    json.dump(setting, fp, sort_keys=True, indent=4)
                                 client.sendMessage(msg.to,"leave message disabled.")
 
-                      if cmd.startswith(".welcome ") or cmd.startswith(rname + "welcome "):
+                      if cmd.startswith("welcome ") or cmd.startswith(rname + "welcome "):
                           data = cmd.split("welcome ")[1]
                           if data == "on":
                               if msg.to in setting["welcome"]:client.sendMessage(msg.to,"already enabled.")
@@ -703,7 +703,7 @@ def Oup(op):
 
                       ''' ** STEALING ** ''' 
 
-                      if cmd== ".geturl" or cmd== rname + "geturl": 
+                      if cmd== "geturl" or cmd== rname + "geturl": 
                          group = client.getGroup(msg.to)
                          if group.preventedJoinByTicket == True:
                             group.preventedJoinByTicket = False
@@ -715,12 +715,12 @@ def Oup(op):
                              set = client.reissueGroupTicket(msg.to)
                              client.sendFlexText(msg.to, "Group Ticket : \nhttps://line.me/R/ti/g/{}".format(str(set)))                        
 
-                      if cmd== ".gpict" or cmd== rname + ".gpict": 
+                      if cmd== "gpict" or cmd== rname + ".gpict": 
                           group = client.getGroup(msg.to)                          
                           data =  "{}{}".format(oburl,group.pictureStatus)
                           client.sendFlexImage(msg.to,data)
 
-                      if cmd.startswith(".getpict ") or cmd.startswith(rname + "getpict "):
+                      if cmd.startswith("getpict ") or cmd.startswith(rname + "getpict "):
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
                               mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -731,7 +731,7 @@ def Oup(op):
                                       client.sendFlexImage(msg.to,data)
                                   else:client.sendMessage(msg.to,"Permission denied.")
 
-                      if cmd.startswith(".getcover ") or cmd.startswith(rname + "getcover "):
+                      if cmd.startswith("getcover ") or cmd.startswith(rname + "getcover "):
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
                               mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -742,7 +742,7 @@ def Oup(op):
                                       client.sendFlexImage(msg.to,data)
                                   else:client.sendMessage(msg.to,"Permission denied.")
 
-                      if cmd.startswith(".getmid ") or cmd.startswith(rname + "getmid "):
+                      if cmd.startswith("getmid ") or cmd.startswith(rname + "getmid "):
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
                               mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -754,7 +754,7 @@ def Oup(op):
                                   else:client.sendMessage(msg.to,"Permission denied.")
 
 
-                      if cmd.startswith(".getname ") or cmd.startswith(rname + "getname "):
+                      if cmd.startswith("getname ") or cmd.startswith(rname + "getname "):
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
                               mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -765,7 +765,7 @@ def Oup(op):
                                       client.sendMessage(msg.to,"「   Name   」\n{}".format(data))
                                   else:client.sendMessage(msg.to,"Permission denied.")
 
-                      if cmd.startswith(".getbio ") or cmd.startswith(rname + "getbio "):
+                      if cmd.startswith("getbio ") or cmd.startswith(rname + "getbio "):
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
                               mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -777,7 +777,7 @@ def Oup(op):
                                   else:client.sendMessage(msg.to,"Permission denied.")
 
 
-                      if cmd.startswith(".locate") or cmd.startswith(rname + "locate"):
+                      if cmd.startswith("locate") or cmd.startswith(rname + "locate"):
                           cmdx = cmd.split(' @')[0]
                           if cmd.startswith('.'):label = cmdx.replace('.','')
                           else:label = cmdx.replace(rname,"")
@@ -799,12 +799,12 @@ def Oup(op):
                               if detect == []:client.sendMessage(msg.to,"Nothing found.")
                               else:
                                  menu += "\n\nTotal: {} Groups.".format(len(detect))
-                                 data ={"type":"bubble","size":"kilo","body":{"type":"box","layout":"vertical","backgroundColor": "#000000","contents":[{"type":"box","layout":"vertical","contents":[{"type":"box","layout":"vertical","contents":[{"type":"image","url":"{}{}".format(oburl,profile.pictureStatus),"aspectRatio":"1:1","aspectMode":"cover"}],"cornerRadius":"100px"}],"alignItems":"center","paddingTop":"50px"},{"type":"box","layout":"vertical","contents":[{"type":"text","text":"{}".format(profile.displayName),"color":"#FFC300","weight":"bold","align":"center"},{"type":"text","text":"Tetaplah mesum","color":"#FFC300cc","align":"center","size":"xxs"}],"paddingAll":"10px"},{"type":"box","layout":"vertical","contents":[{"type":"text","text":label.upper(),"color":"#FFC300","weight":"bold","size":"xxs"}],"position":"absolute","borderWidth":"1px","borderColor":"#ffffffcc","paddingStart":"8px","paddingEnd":"8px","paddingTop":"5px","paddingBottom":"5px","offsetTop":"10px","offsetStart":"10px","cornerRadius":"20px"},{"type":"box","layout":"vertical","contents":[{"type":"box","layout":"vertical","contents":[{"type":"text","text":menu,"color":"#FFC300","size":"xs","wrap":True}],"paddingAll":"20px","backgroundColor":"#111111"}],"paddingAll":"20px","paddingTop":"5px"}],"paddingAll":"0px"},"styles":{"body":{"backgroundColor":"#161e2b"}}}
+                                 data ={"type":"bubble","size":"kilo","body":{"type":"box","layout":"vertical","backgroundColor": "#000000","contents":[{"type":"box","layout":"vertical","contents":[{"type":"box","layout":"vertical","contents":[{"type":"image","url":"{}{}".format(oburl,profile.pictureStatus),"aspectRatio":"1:1","aspectMode":"cover"}],"cornerRadius":"100px"}],"alignItems":"center","paddingTop":"50px"},{"type":"box","layout":"vertical","contents":[{"type":"text","text":"{}".format(profile.displayName),"color":"#FFC300","weight":"bold","align":"center"},{"type":"text","text":"Psikontol","color":"#FFC300cc","align":"center","size":"xxs"}],"paddingAll":"10px"},{"type":"box","layout":"vertical","contents":[{"type":"text","text":label.upper(),"color":"#FFC300","weight":"bold","size":"xxs"}],"position":"absolute","borderWidth":"1px","borderColor":"#ffffffcc","paddingStart":"8px","paddingEnd":"8px","paddingTop":"5px","paddingBottom":"5px","offsetTop":"10px","offsetStart":"10px","cornerRadius":"20px"},{"type":"box","layout":"vertical","contents":[{"type":"box","layout":"vertical","contents":[{"type":"text","text":menu,"color":"#FFC300","size":"xs","wrap":True}],"paddingAll":"20px","backgroundColor":"#111111"}],"paddingAll":"20px","paddingTop":"5px"}],"paddingAll":"0px"},"styles":{"body":{"backgroundColor":"#161e2b"}}}
                                  client.sendFlex(msg.to,data)
 
                       ''' ** PROTECTION ** ''' 
 
-                      if cmd.startswith(".addwl ") or cmd.startswith(rname + "addwl "):
+                      if cmd.startswith("addwl ") or cmd.startswith(rname + "addwl "):
                           promote = cmd.split("addwl ")[1]
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
@@ -827,7 +827,7 @@ def Oup(op):
                                  read["addwhitelist"] = True
 
 
-                      if cmd.startswith(".delwl ") or cmd.startswith(rname + "delwl "):
+                      if cmd.startswith("delwl ") or cmd.startswith(rname + "delwl "):
                           demote = cmd.split("delwl ")[1]
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
@@ -850,7 +850,7 @@ def Oup(op):
                                  read["delwhitelist"] = True
 
 
-                      if cmd.startswith(".addbl ") or cmd.startswith(rname + "addbl "):
+                      if cmd.startswith("addbl ") or cmd.startswith(rname + "addbl "):
                           promote = cmd.split("addbl ")[1]
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
@@ -873,7 +873,7 @@ def Oup(op):
                               read["addblacklist"] = True
 
 
-                      if cmd.startswith(".delbl ") or cmd.startswith(rname + "delbl "):
+                      if cmd.startswith("delbl ") or cmd.startswith(rname + "delbl "):
                           demote = cmd.split("delbl ")[1]
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', cmd)
@@ -895,7 +895,7 @@ def Oup(op):
                                  client.sendMessage(msg.to,"send an contact.")
                                  read["delblacklist"] = True
 
-                      if cmd.startswith(".protect ") or cmd.startswith(rname + "protect "):
+                      if cmd.startswith("protect ") or cmd.startswith(rname + "protect "):
                           protection = cmd.split("protect ")[1]
                           if protection == "max":
                              if msg.to in protectMax:
@@ -973,10 +973,10 @@ def Oup(op):
 
                       ''' ** CUSTOMING '''
 
-                      if cmd == ".apikey" or cmd == rname + "apikey":
+                      if cmd == "apikey" or cmd == rname + "apikey":
                          data = "「  Usage  」\n .apikey: status\n .apikey: YOUR APIKEY"
                          client.sendFlexText(to,data)
-                      if cmd.startswith(".apikey: ") or cmd.startswith(rname + "apikey: "):
+                      if cmd.startswith("apikey: ") or cmd.startswith(rname + "apikey: "):
                           if search == "status":
                               url = f"{host}/status?apikey={setting['apikey']}"
                               data = json.loads(requests.get(url).text)
@@ -995,7 +995,7 @@ def Oup(op):
                                  json.dump(setting, fp, sort_keys=True, indent=4)
                              client.sendMessage(to,"Apikey was upgrade.")
 
-                      if cmd.startswith(".upbio: ") or cmd.startswith(rname + "upbio: "):
+                      if cmd.startswith("upbio: ") or cmd.startswith(rname + "upbio: "):
                           biograp = cmd.split("bio: ")[1]
                           if len(biograp) <= 100:
                               profile = client.getProfile()
@@ -1004,7 +1004,7 @@ def Oup(op):
                               client.sendReplyMessage(msg.id,msg.to, "Status bio updated to:\n{}".format(biograp))
                           else:client.sendReplyMessage(msg.id,msg.to,"Maximum 100 character.")
 
-                      if cmd.startswith(".upname: ") or cmd.startswith(rname + "upname: "):
+                      if cmd.startswith("upname: ") or cmd.startswith(rname + "upname: "):
                           dname = cmd.split("upname: ")[1]
                           if len(dname) <= 100:
                                profile = client.getProfile()
@@ -1013,7 +1013,7 @@ def Oup(op):
                                client.sendReplyMessage(msg.id,msg.to, "Profile name updated to:\n{}".format(dname.title()))
                           else:client.sendReplyMessage(msg.id,msg.to,"Maximum 20 character.")
 
-                      if cmd.startswith(".rname: ") or cmd.startswith(rname + "rname: "):
+                      if cmd.startswith("rname: ") or cmd.startswith(rname + "rname: "):
                           rnamed = cmd.split("name: ")[1] 
                           setting["rname"] = rnamed
                           with open('Data/settings.json', 'w') as fp:
@@ -1021,9 +1021,9 @@ def Oup(op):
                           client.sendReplyMessage(msg.id,msg.to, "Rname updated to:\n{}".format(rnamed.title()))
 
 
-                      if cmd == ".keykick" or cmd == rname + "keykick":
+                      if cmd == "keykick" or cmd == rname + "keykick":
                           client.sendFlexText(to,"「   Usage   」\n.keykick: YOUR KEY\n.keykick: reset\n.keykick: cek")
-                      if cmd.startswith(".keykick: ") or cmd.startswith(rname + "keykick: "):
+                      if cmd.startswith("keykick: ") or cmd.startswith(rname + "keykick: "):
                          kicked = cmd.split("kick: ")[1] 
                          if kicked == "reset":
                             setting["keykick"] = ""
@@ -1038,26 +1038,26 @@ def Oup(op):
                             client.sendReplyMessage(msg.id,msg.to, "Key updated to:\n{}".format(kicked.title()))
 
 
-                      if cmd.startswith(".leavemsg: ") or cmd.startswith(rname + "leavemsg: "):
+                      if cmd.startswith("leavemsg: ") or cmd.startswith(rname + "leavemsg: "):
                           data = cmd.split("msg: ")[1]
                           read["lmessage"] = data
                           client.sendMessage(msg.to,"Leave message update to:\n{}".format(data))
 
-                      if cmd.startswith(".welcomsg: ") or cmd.startswith(rname + "welcomsg: "):
+                      if cmd.startswith("welcomsg: ") or cmd.startswith(rname + "welcomsg: "):
                           data = cmd.split("msg: ")[1]
                           if msg.to in setting["welcome"]:
                              read["wmessage"][msg.to] = data
                              client.sendMessage(msg.to,"Welcome message update to:\n{}".format(data))
                           else:client.sendMessage(msg.to,"Welcome message not active\nPlease enabled welcome first.")
 
-                      if cmd.startswith(".gname: ") or cmd.startswith(rname + "gname: "):
+                      if cmd.startswith("gname: ") or cmd.startswith(rname + "gname: "):
                           gname = msg.text.split("name: ")[1] 
                           g = client.getGroup(msg.to)
                           g.name = gname
                           client.updateGroup(g)
                           client.sendReplyMessage(msg.id,msg.to, "Group updated to:\n{}".format(gname))
 
-                      if cmd.startswith(".broadcast: ") or cmd.startswith(rname + "broadcast: "):
+                      if cmd.startswith("broadcast: ") or cmd.startswith(rname + "broadcast: "):
                          bc = cmd.split("broadcast: ")[1]
                          groups = client.getGroupIdsJoined()
                          allGc = client.getGroups(groups)
@@ -1066,7 +1066,7 @@ def Oup(op):
                              client.sendMention(allGc[x].id, youBc,[mid])                           
                          client.sendReplyMessage(id,to,"Success Broadcasted on {} groups.".format(len(allGc)))
 
-                      if cmd.startswith(".update") or cmd.startswith(rname + "updatepict"):
+                      if cmd.startswith("update") or cmd.startswith(rname + "updatepict"):
                           data = cmd.split("update")[1]                          
                           if data == "pict":
                               read["pp"] = True
@@ -1082,14 +1082,14 @@ def Oup(op):
                       ''' ** MEDIA FEATURE ** ''' 
 
 
-                      if cmd.startswith(".joox: ") or cmd.startswith(rname + "joox: "):
+                      if cmd.startswith("joox: ") or cmd.startswith(rname + "joox: "):
                          data = media.joox(search)
                          main = data['result']
                          result = flex.joox(main)
                          client.sendFlex(to,result)
                          client.sendAudioWithURL(to,main["mp3Url"])
                       
-                      if cmd.startswith(".youtube") or cmd.startswith(rname + "youtube"):
+                      if cmd.startswith("youtube") or cmd.startswith(rname + "youtube"):
                          query = cmd.split("youtube")[1]
                          if query.startswith("dl: http"):
                             data = media.youtubedl(link)
@@ -1106,13 +1106,13 @@ def Oup(op):
                             client.sendFlexVideo(to,main["videoUrl"],main["thumbnail"])
                             client.sendFlexAudio(to,main["audioUrl"])
                      
-                      if cmd.startswith(".lyric: ") or cmd.startswith(rname + "lyric: "):
+                      if cmd.startswith("lyric: ") or cmd.startswith(rname + "lyric: "):
                           data = media.lyric(search)
                           main = data['result']
                           result = flex.lyric(main)
                           client.sendFlex(to,result)
 
-                      if cmd.startswith(".tiktok") or cmd.startswith(rname + "tiktok"):
+                      if cmd.startswith("tiktok") or cmd.startswith(rname + "tiktok"):
                           query = cmd.split("tiktok")[1]
                           if query.startswith("dl: http"):
                               client.sendMessage(to,"Downloading..")
@@ -1125,7 +1125,7 @@ def Oup(op):
                               result = flex.tiktok(main)
                               client.sendFlex(to,result)
 
-                      if cmd.startswith(".smule") or cmd.startswith(rname + "smule"):
+                      if cmd.startswith("smule") or cmd.startswith(rname + "smule"):
                           query = cmd.split("smule")[1]
                           if query.startswith("dl: http"):
                               client.sendMessage(to,"Downloading..")
@@ -1141,7 +1141,7 @@ def Oup(op):
                               result = flex.smule(main)
                               client.sendFlex(to,result)
 
-                      if cmd.startswith(".twitter") or cmd.startswith(rname + "twitter"):
+                      if cmd.startswith("twitter") or cmd.startswith(rname + "twitter"):
                           query = cmd.split("twitter")[1]
                           if query.startswith("dl: http"):
                               client.sendMessage(to,"Downloading..")
@@ -1154,14 +1154,14 @@ def Oup(op):
                               result = flex.twitter(main)
                               client.sendFlex(to,result)
 
-                      if cmd.startswith(".facebookdl: http") or cmd.startswith(rname + "facebookdl: http"):
+                      if cmd.startswith("facebookdl: http") or cmd.startswith(rname + "facebookdl: http"):
                          data = media.facebookdl(link)
                          main = data["result"]
                          result = flex.facebook(main)
                          client.sendFlex(to,result)
                          client.sendFlexVideo(to,main["videoUrl"],"white")
                       
-                      if cmd.startswith(".timeline: http") or cmd.startswith(rname + "timeline: http"):
+                      if cmd.startswith("timeline: http") or cmd.startswith(rname + "timeline: http"):
                           data = media.timeline(link)
                           main = data['result']
                           result = flex.timeline(main)
@@ -1172,19 +1172,19 @@ def Oup(op):
                               if i["type"] == "image":
                                  client.sendFlexImage(to,i["url"])
 
-                      if cmd.startswith(".github: ") or cmd.startswith(rname + "github: "):
+                      if cmd.startswith("github: ") or cmd.startswith(rname + "github: "):
                           data = media.github(search)
                           main = data['result']
                           result = flex.github(main)
                           client.sendFlex(to,result)
 
-                      if cmd.startswith(".instagram: ") or cmd.startswith(rname + "instagram: "):
+                      if cmd.startswith("instagram: ") or cmd.startswith(rname + "instagram: "):
                           data = media.instagram(search)
                           main = data['result']
                           result = flex.instagram(main)
                           client.sendFlex(to,result)
 
-                      if cmd.startswith(".instapost: ") or cmd.startswith(rname + "instapost: "):
+                      if cmd.startswith("instapost: ") or cmd.startswith(rname + "instapost: "):
                           data = media.instapost(link)
                           main = data['result']
                           result = flex.instapost(main)
@@ -1196,7 +1196,7 @@ def Oup(op):
                                  if i["type"] == "video":
                                     client.sendFlexVideo(to,i["postUrl"],i["poster"])
 
-                      if cmd.startswith(".instastory: ") or cmd.startswith(rname + "instastory: "):
+                      if cmd.startswith("instastory: ") or cmd.startswith(rname + "instastory: "):
                          query = search.split(" / ")
                          if len(query) == 2:
                             client.sendMessage(to,"Downloading..")
@@ -1212,25 +1212,25 @@ def Oup(op):
                             client.sendMessage(to,"Invalid commands.")
                             client.sendReplyMessage(ids,to,"「   Example   」\n"+f"{text} / number".capitalize())
 
-                      if cmd.startswith(".bitly: ") or cmd.startswith(rname + "bitly: "):
+                      if cmd.startswith("bitly: ") or cmd.startswith(rname + "bitly: "):
                          data = media.bitly(link)
                          main = data['result']
                          result = "URL Shortened : {}".format(main)
                          client.sendReplyMessage(ids,to,result)
 
-                      if cmd.startswith(".tinyurl: ") or cmd.startswith(rname + "tinyurl: "):
+                      if cmd.startswith("tinyurl: ") or cmd.startswith(rname + "tinyurl: "):
                          data = media.tinyurl(link)
                          main = data['result']
                          result = "URL Shortened : {}".format(main)
                          client.sendReplyMessage(ids,to,result)
 
-                      if cmd.startswith(".movie: ") or cmd.startswith(rname + "movie: "):
+                      if cmd.startswith("movie: ") or cmd.startswith(rname + "movie: "):
                           data = media.movie(search)
                           main = data['result']
                           result = flex.movie(main)
                           client.sendFlex(to,result)
 
-                      if cmd.startswith(".cinema: ") or cmd.startswith(rname + "cinema: "):
+                      if cmd.startswith("cinema: ") or cmd.startswith(rname + "cinema: "):
                           client.sendMessage(to,"Searching..")
                           query = search.split(" / ")
                           if len(query) == 1:
@@ -1252,7 +1252,7 @@ def Oup(op):
                              client.sendFlex(to,result)
 
 
-                      if cmd.startswith(".porn: ") or cmd.startswith(rname + "porn: "):
+                      if cmd.startswith("porn: ") or cmd.startswith(rname + "porn: "):
                           data = media.porn(search)
                           main = data['result']
                           result = flex.porn(main)
@@ -1260,38 +1260,38 @@ def Oup(op):
                           client.sendFlexVideo(to,main["videoUrl"],main["thumbnail"])
 
 
-                      if cmd.startswith(".zodiac: ") or cmd.startswith(rname + "zodiac: "):
+                      if cmd.startswith("zodiac: ") or cmd.startswith(rname + "zodiac: "):
                          data = media.zodiac(search)
                          main = data['result']
                          result = flex.zodiac(main)
                          client.sendFlex(to,result)
 
-                      if cmd.startswith(".urban: ") or cmd.startswith(rname + "urban: "):
+                      if cmd.startswith("urban: ") or cmd.startswith(rname + "urban: "):
                          data = media.urban(search)
                          main = data['result']
                          result = flex.urban(main)
                          client.sendFlex(to,result)
 
-                      if cmd.startswith(".kbbi: ") or cmd.startswith(rname + "kbbi: "):
+                      if cmd.startswith("kbbi: ") or cmd.startswith(rname + "kbbi: "):
                          data = media.kbbi(search)
                          main = data['result']
                          result = flex.kbbi(main,search)
                          client.sendFlex(to,result)
 
-                      if cmd.startswith(".image: ") or cmd.startswith(rname + "image: "):
+                      if cmd.startswith("image: ") or cmd.startswith(rname + "image: "):
                          data = media.image(search)
                          main = data['result']
                          result = random.choice(main)
                          client.sendFlexImage(to,result)
 
-                      if cmd.startswith(".cuaca: ") or cmd.startswith(rname + "cuaca: "):
+                      if cmd.startswith("cuaca: ") or cmd.startswith(rname + "cuaca: "):
                          data = media.cuaca(search)
                          main = data['result']
                          result = flex.cuaca(main)
                          client.sendFlex(to,result)
 
 
-                      if cmd.startswith(".playstore: ") or cmd.startswith(rname + "playstore: "):
+                      if cmd.startswith("playstore: ") or cmd.startswith(rname + "playstore: "):
                          client.sendMessage(to,"Searching..")
                          data = media.playstore(search)
                          main = data['result'][0]
@@ -1299,7 +1299,7 @@ def Oup(op):
                          client.sendFlex(to,result)
 
 
-                      if cmd.startswith(".cctv") or cmd.startswith(rname + "cctv"):
+                      if cmd.startswith("cctv") or cmd.startswith(rname + "cctv"):
                          query = text.split("cctv")[1]
                          if query == "":
                             data = media.cctv_code()
@@ -1314,7 +1314,7 @@ def Oup(op):
                             client.sendFlexVideo(to,main['video'],main['thumbnail'])
                             client.sendFlex(to,result)
 
-                      if cmd.startswith(".acaratv") or cmd.startswith(rname + "acaratv"):
+                      if cmd.startswith("acaratv") or cmd.startswith(rname + "acaratv"):
                           query = cmd.split("acaratv")[1]
                           if query == "":
                              data = media.acaratv()
@@ -1328,20 +1328,20 @@ def Oup(op):
                              result = flex.channel(main,search)
                              client.sendFlex(to,result)
 
-                      if cmd.startswith(".adzan: ") or cmd.startswith(rname + "adzan: "):
+                      if cmd.startswith("adzan: ") or cmd.startswith(rname + "adzan: "):
                           data = media.adzan(search)
                           main = data['result']
                           result = flex.adzan(main)
                           client.sendFlex(to,result)
 
-                      if cmd.startswith(".wallpaper: ") or cmd.startswith(rname + "wallpaper: "):
+                      if cmd.startswith("wallpaper: ") or cmd.startswith(rname + "wallpaper: "):
                           data = media.wallpaper(search)
                           main = data['result']
                           result = random.choice(main)
                           client.sendFlexImage(to,result)
 
 
-                      if cmd.startswith(".screenshot: ") or cmd.startswith(rname + "screenshot: "):
+                      if cmd.startswith("screenshot: ") or cmd.startswith(rname + "screenshot: "):
                          que = cmd.split("shot: ")[1]
                          if que.startswith("http"):  
                              query = que
@@ -1353,7 +1353,7 @@ def Oup(op):
                          client.sendFlexImage(to,main["desktop"])
                          client.sendFlexImage(to,main["mobile"])
 
-                      if cmd.startswith(".resi: ") or cmd.startswith(rname + "resi: "):
+                      if cmd.startswith("resi: ") or cmd.startswith(rname + "resi: "):
                          query = link.split()
                          if len(query) == 1:
                             client.sendMessage(to,"Invalid commands.")
@@ -1364,33 +1364,33 @@ def Oup(op):
                             result = flex.resi(main)
                             client.sendFlex(to,result)
 
-                      if cmd.startswith(".gif: ") or cmd.startswith(rname + "gif: "):
+                      if cmd.startswith("gif: ") or cmd.startswith(rname + "gif: "):
                          data = media.gif(search)
                          main = data['result']
                          result = random.choice(main)
                          client.sendGIFWithURL(to,result)
 
 
-                      if cmd.startswith(".wikipedia: ") or cmd.startswith(rname + "wikipedia: "):
+                      if cmd.startswith("wikipedia: ") or cmd.startswith(rname + "wikipedia: "):
                          data = media.wikipedia(search)
                          main = data['result']               
                          result = flex.wikipedia(main)
                          client.sendFlex(to,result)
 
-                      if cmd.startswith(".artinama: ") or cmd.startswith(rname + "artinama: "):
+                      if cmd.startswith("artinama: ") or cmd.startswith(rname + "artinama: "):
                         data = media.nama(search)
                         main = data['result']
                         result = flex.nama(main)
                         client.sendFlex(to,result)
 
-                      if cmd.startswith(".artimimpi: ") or cmd.startswith(rname + "artimimpi: "):
+                      if cmd.startswith("artimimpi: ") or cmd.startswith(rname + "artimimpi: "):
                         data = media.mimpi(search)
                         main = data['result']
                         result = flex.mimpi(main,search)
                         client.sendFlex(to,result)
 
 
-                      if cmd.startswith(".handphone: ") or cmd.startswith(rname + "handphone: "):
+                      if cmd.startswith("handphone: ") or cmd.startswith(rname + "handphone: "):
                         query = search.split(" / ")
                         if len(query) == 1:
                            data = media.cellular(search)
@@ -1406,14 +1406,14 @@ def Oup(op):
                            client.sendFlex(to,result)
 
 
-                      if cmd.startswith(".birth: ") or cmd.startswith(rname + "birth: "):
+                      if cmd.startswith("birth: ") or cmd.startswith(rname + "birth: "):
                          data = media.lahir(search)
                          main = data['result']
                          result = flex.lahir(main)
                          client.sendFlex(to,result)
 
 
-                      if cmd.startswith(".anniv: ") or cmd.startswith(rname + "anniv: "):
+                      if cmd.startswith("anniv: ") or cmd.startswith(rname + "anniv: "):
                           query = cmd.split("anniv: ")[1]
                           if "-" not in query:client.sendMessage(to,"「   Usage   」\n .anniv: 17-02-2013")
                           else:
@@ -1423,7 +1423,7 @@ def Oup(op):
                              client.sendFlex(to,result)
 
 
-                      if cmd.startswith(".manga: ") or cmd.startswith(rname + "manga: "):
+                      if cmd.startswith("manga: ") or cmd.startswith(rname + "manga: "):
                          chapter = link.split(" / ")
                          if len(chapter) == 1:
                             data = media.mangaSearch(search)
@@ -1442,37 +1442,37 @@ def Oup(op):
                                 client.sendImageWithURL(to,img)
 
 
-                      if cmd == ".imagelink" or cmd == rname + "imagelink":
+                      if cmd == "imagelink" or cmd == rname + "imagelink":
                           read["imgurl"][to] = True
                           client.sendReplyMessage(ids,to,"Send an image.")
 
-                      if cmd == ".covid19" or cmd == rname + "covid19":
+                      if cmd == "covid19" or cmd == rname + "covid19":
                           data = media.corona()
                           main = data['result']
                           result = flex.corona(main)
                           client.sendFlex(to,result)
 
-                      if cmd == ".kamasutra" or cmd == rname + "kamasutra":
+                      if cmd == "kamasutra" or cmd == rname + "kamasutra":
                          data = media.kamasutra()
                          main = data['result']
                          result = flex.kamasutra(main)
                          client.sendFlex(to,result)
 
 
-                      if cmd == ".bmkg" or cmd == rname + "bmkg":
+                      if cmd == "bmkg" or cmd == rname + "bmkg":
                          data = media.bmkg()
                          main = data['result']
                          result = flex.bmkg(main)
                          client.sendFlex(to,result)
 
 
-                      if cmd == ".topnews" or cmd == rname + "topnews":
+                      if cmd == "topnews" or cmd == rname + "topnews":
                          data = media.topnews()
                          main = data['result']
                          result = flex.topnews(main)
                          client.sendFlex(to,result)
 
-                      if cmd == ".pornstar" or cmd == rname + "pornstar":
+                      if cmd == "pornstar" or cmd == rname + "pornstar":
                          data = media.pornstar()
                          main = random.choice(data['result'])
                          result = flex.pornstar(main)
@@ -1480,20 +1480,20 @@ def Oup(op):
                          client.sendFlexImage(to,main["image"])
 
 
-                      if cmd == ".quotes" or cmd == rname + "quotes":
+                      if cmd == "quotes" or cmd == rname + "quotes":
                          data = media.movie_quotes()
                          main = data['result']
                          result = flex.quotes(main)
                          client.sendFlex(to,result)
 
 
-                      if cmd == ".hentai" or cmd == rname + ".hentai":
+                      if cmd == "hentai" or cmd == rname + ".hentai":
                          data = media.hentai()
                          main = data['result']
                          result = random.choice(main)
                          client.sendFlexImage(to,result)
 
-                      if cmd.startswith(".karir") or cmd.startswith(rname + "karir"):
+                      if cmd.startswith("karir") or cmd.startswith(rname + "karir"):
                           query = text.split("karir")[1]
                           if query == "":
                              data = media.karir()
@@ -1507,18 +1507,18 @@ def Oup(op):
                              result = flex.karirInfo(main)
                              client.sendFlex(to,result)
 
-                      if cmd.startswith(".trans-en: ") or cmd.startswith(rname + "trans-en: "):
+                      if cmd.startswith("trans-en: ") or cmd.startswith(rname + "trans-en: "):
                           data = media.translate("en",link)
                           main = data['result']['translate']
                           client.sendReplyMessage(ids,to,f"「   IND - ENG   」\n{main}")
 
-                      if cmd.startswith(".trans-id: ") or cmd.startswith(rname + "trans-id: "):
+                      if cmd.startswith("trans-id: ") or cmd.startswith(rname + "trans-id: "):
                          data = media.translate("id",link)
                          main = data['result']['translate']
                          client.sendReplyMessage(ids,to,f"「   ENG - IND   」\n{main}")
 
 
-                      if cmd.startswith(".fancy: ") or cmd.startswith(rname + "fancy: "):
+                      if cmd.startswith("fancy: ") or cmd.startswith(rname + "fancy: "):
                           url = f"{host}/fancy?text={link}"
                           data = json.loads(requests.get(url).text)
                           main = ""
@@ -1527,7 +1527,7 @@ def Oup(op):
                           client.sendFlexText(to,main[1:])
 
 
-                      if cmd.startswith(".customlink: ") or cmd.startswith(rname + "customlink: "):
+                      if cmd.startswith("customlink: ") or cmd.startswith(rname + "customlink: "):
                           query = link.split()
                           if len(query) == 2:
                              url = f"{host}/custom/make"
@@ -1537,14 +1537,14 @@ def Oup(op):
                              result = "URL Shortened : {}".format(main)
                              client.sendReplyMessage(ids,to,result)
 
-                      if cmd.startswith(".checkip: ") or cmd.startswith(rname + "checkip: "):
+                      if cmd.startswith("checkip: ") or cmd.startswith(rname + "checkip: "):
                           url = f"{host}/ip={link}"
                           data = json.loads(requests.get(url).text)
                           main = data['result']
                           result = flex.checkIP(main)
                           client.sendFlex(to,result)
 
-                      if cmd == ".header?" or cmd == rname + "header?":
+                      if cmd == "header?" or cmd == rname + "header?":
                           client.sendMessage(to,"loading..")
                           url = f"{host}/line"
                           data = json.loads(requests.get(url).text)
@@ -1553,7 +1553,7 @@ def Oup(op):
                           client.sendFlex(to,result)
 
 
-                      if cmd.startswith(".dick ") or cmd.startswith(rname + "dick "):
+                      if cmd.startswith("dick ") or cmd.startswith(rname + "dick "):
                         if 'MENTION' in msg.contentMetadata.keys() != None:
                             mention = eval(msg.contentMetadata['MENTION'])
                             users = mention['MENTIONEES'][0]['M']
@@ -1564,7 +1564,7 @@ def Oup(op):
                                 result = flex.dick(main,names)
                                 client.sendFlex(to,result)
 
-                      if cmd.startswith(".tits ") or cmd.startswith(rname + "tits "):
+                      if cmd.startswith("tits ") or cmd.startswith(rname + "tits "):
                         if 'MENTION' in msg.contentMetadata.keys() != None:
                             mention = eval(msg.contentMetadata['MENTION'])
                             users = mention['MENTIONEES'][0]['M']
@@ -1575,7 +1575,7 @@ def Oup(op):
                                 result = flex.tits(main,names)
                                 client.sendFlex(to,result)
 
-                      if cmd.startswith(".vagina ") or cmd.startswith(rname + "vagina "):
+                      if cmd.startswith("vagina ") or cmd.startswith(rname + "vagina "):
                         if 'MENTION' in msg.contentMetadata.keys() != None:
                             mention = eval(msg.contentMetadata['MENTION'])
                             users = mention['MENTIONEES'][0]['M']
@@ -1586,7 +1586,7 @@ def Oup(op):
                                 result = flex.vagina(main,names)
                                 client.sendFlex(to,result)
 
-                      if cmd.startswith(".meme") or cmd.startswith(rname + "meme"):
+                      if cmd.startswith("meme") or cmd.startswith(rname + "meme"):
                           if cmd.split("meme")[1] == "":client.sendReplyMessage(ids,to,"「   Usage   」\n.meme @Tag / Text1 - Text2")
                           else:
                             text = cmd.split("/ ")[1].split(" - ")[0]
