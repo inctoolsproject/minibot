@@ -2,6 +2,7 @@
 from Imgood.linepy import *
 from Imgood.akad import *
 from Imgood.linepy.style import *
+from Imgood.linepy.login import *
 from justgood import imjustgood
 from time import sleep
 from gtts import gTTS
@@ -22,9 +23,20 @@ from Liff.ttypes import LiffChatContext, LiffContext, LiffSquareChatContext, Lif
 login = json.loads(open('Data/token.json','r').read())
 setting = json.loads(open('Data/settings.json','r').read())
 cctv = json.loads(open('Data/cctv.json','r').read())
-if login["token"] == "":
-    client = LINE(login["email"],login["password"])
-else:client = LINE(idOrAuthToken=login["token"])
+loger = Login()
+
+if login["email"] == "":
+   if login["token"] == "":
+      data = loger.logqr(cert=None) #You can put your Crt token here
+      client = LINE(idOrAuthToken=data)
+      login["token"] = data
+      with open('Data/token.json', 'w') as fp:
+        json.dump(login, fp, sort_keys=True, indent=4)
+   else:
+   	  try:client = LINE(idOrAuthToken=login["token"])
+   	  except:print("TOKEN EXPIRED");sys.exit()
+else:
+  client = LINE(login["email"],login["password"])
 
 flex = Autobots()
 clPoll = OEPoll(client)
@@ -856,6 +868,7 @@ def Oup(op):
                                  read["delwhitelist"] = True
 
 
+
                       if cmd.startswith("addbl ") or cmd.startswith(rname + "addbl "):
                           promote = cmd.split("addbl ")[1]
                           if 'MENTION' in msg.contentMetadata.keys()!= None:
@@ -1533,7 +1546,8 @@ def Oup(op):
 
                       if cmd.startswith("fancy: ") or cmd.startswith(rname + "fancy: "):
                           url = f"{host}/fancy?text={link}"
-                          data = json.loads(requests.get(url).text)
+                          head = {"User-Agent": "JustGood/0.5"}
+                          data = json.loads(requests.get(url,headers=head).text)
                           main = ""
                           for s in data["result"]:
                               main += "\n{}\n".format(s)
@@ -1544,7 +1558,7 @@ def Oup(op):
                           query = link.split()
                           if len(query) == 2:
                              url = f"{host}/custom/make"
-                             headers = {"label": query[0], "url": query[1]}
+                             headers = {"label": query[0], "url": query[1],"User-Agent":"JustGood/0.5"}
                              data = json.loads(requests.get(url, headers=headers).text)
                              main = data["result"]
                              result = "URL Shortened : {}".format(main)
@@ -1552,7 +1566,8 @@ def Oup(op):
 
                       if cmd.startswith("checkip: ") or cmd.startswith(rname + "checkip: "):
                           url = f"{host}/ip={link}"
-                          data = json.loads(requests.get(url).text)
+                          head = {"User-Agent": "JustGood/0.5"}
+                          data = json.loads(requests.get(url,headers=head).text)
                           main = data['result']
                           result = flex.checkIP(main)
                           client.sendFlex(to,result)
@@ -1560,7 +1575,8 @@ def Oup(op):
                       if cmd == "header?" or cmd == rname + "header?":
                           client.sendMessage(to,"loading..")
                           url = f"{host}/line"
-                          data = json.loads(requests.get(url).text)
+                          head = {"User-Agent": "JustGood/0.5"}
+                          data = json.loads(requests.get(url,headers=head).text)
                           main = data['result']
                           result = flex.linever(main)
                           client.sendFlex(to,result)
