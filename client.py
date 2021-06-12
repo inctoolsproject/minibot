@@ -818,10 +818,13 @@ def Oup(op):
                                      white.append(mention["M"])
                                      with open('Data/settings.json', 'w') as fp:
                                           json.dump(setting, fp, sort_keys=True, indent=4)
-                                     data += " {}. @! it,\n".format(no)
+                                     data += "\n {}. @! it,".format(no)
                                      no = (no+1)
-                              if hole == []:client.sendMessage(msg.to,"「   Failed   」\nuser already in whitelist or blacklist.")
-                              else:client.sendReplyMention(msg.id,msg.to,data,"",hole)
+                                  else:
+                                    client.sendMention(msg.to,"@!  already in whitelist or blacklist.",[mention["M"]])
+                              datax = data + "\n\nTotal: {} user.".format(len(hole))
+                              try:client.sendReplyMention(msg.id,msg.to,datax,"",hole)
+                              except:pass
                           if promote == "on":
                                  client.sendMessage(msg.to,"send an contact.")
                                  read["addwhitelist"] = True
@@ -841,10 +844,13 @@ def Oup(op):
                                      white.remove(mention["M"])
                                      with open('Data/settings.json', 'w') as fp:
                                           json.dump(setting, fp, sort_keys=True, indent=4)
-                                     data += " {}. @! it,\n".format(no)
+                                     data += "\n {}. @! it,".format(no)
                                      no += 1
-                              if hole == []:client.sendMessage(msg.to,"「   Failed   」\nuser not in whitelist.")
-                              else:client.sendReplyMention(msg.id,msg.to,data,"",hole)
+                                  else:
+                                    client.sendMention(msg.to,"@!  not in whitelist.",[mention["M"]])                                     
+                              data += "\n\nTotal: {} user.".format(len(hole))
+                              try:client.sendReplyMention(msg.id,msg.to,data,"",hole)
+                              except:pass
                           if demote == "on":
                                  client.sendMessage(msg.to,"send an contact.")
                                  read["delwhitelist"] = True
@@ -864,10 +870,13 @@ def Oup(op):
                                      white.append(mention["M"])
                                      with open('Data/settings.json', 'w') as fp:
                                           json.dump(setting, fp, sort_keys=True, indent=4)
-                                     data += " {}. @! it,\n".format(no)
+                                     data += "\n {}. @! it,".format(no)
                                      no = (no+1)
-                              if hole == []:client.sendMessage(msg.to,"「   Failed   」\nuser in whitelist or already in blacklist.")
-                              else:client.sendReplyMention(msg.id,msg.to,data,"",hole)
+                                  else:
+                                    client.sendMention(msg.to,"@!  already in whitelist or blacklist.",[mention["M"]])
+                              datax = data + "\n\nTotal: {} user.".format(len(hole))
+                              try:client.sendReplyMention(msg.id,msg.to,datax,"",hole)
+                              except:pass
                           if promote == "on":
                               client.sendMessage(msg.to,"send an contact.")
                               read["addblacklist"] = True
@@ -889,8 +898,11 @@ def Oup(op):
                                           json.dump(setting, fp, sort_keys=True, indent=4)
                                      data += " {}. @! it,\n".format(no)
                                      no += 1
-                              if hole == []:client.sendMessage(msg.to,"「   Failed   」\nuser not in blacklist.")
-                              else:client.sendReplyMention(msg.id,msg.to,data,"",hole)
+                                  else:
+                                    client.sendMention(msg.to,"@!  not in blacklist.",[mention["M"]])                                     
+                              data += "\n\nTotal: {} user.".format(len(hole))
+                              try:client.sendReplyMention(msg.id,msg.to,data,"",hole)
+                              except:pass
                           if demote == "on":
                                  client.sendMessage(msg.to,"send an contact.")
                                  read["delblacklist"] = True
