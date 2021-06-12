@@ -979,7 +979,8 @@ def Oup(op):
                       if cmd.startswith("apikey: ") or cmd.startswith(rname + "apikey: "):
                           if search == "status":
                               url = f"{host}/status?apikey={setting['apikey']}"
-                              data = json.loads(requests.get(url).text)
+                              head= {"User-Agent":"Mozilla/0.5"}
+                              data = json.loads(requests.get(url,headers=head).text)
                               main = data["result"]
                               info = "𝐀𝐏𝐈.𝐈𝐌𝐉𝐔𝐒𝐓𝐆𝐎𝐎𝐃.𝐂𝐎𝐌"
                               info += f"\n\nID : {main['id']}"
